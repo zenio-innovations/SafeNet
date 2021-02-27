@@ -273,7 +273,7 @@ Widget explore(){
         children: [
           Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -282,23 +282,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.map_outlined,color: Colors.yellow,size: 25,),
+              Text("Bus Routes",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -307,23 +303,20 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.time_to_leave,color: Colors.red,size: 25,),
+              SizedBox(height:10),
+              Text("Ambulance",style: TextStyle(fontSize: 9,fontWeight: FontWeight.w900),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -332,23 +325,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.medical_services,color: Colors.cyan,size: 25,),
+              Text("Medical info",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -357,23 +346,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.directions_walk,color: Colors.yellow,size: 25,),
+              Text("Safe Routes",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -382,23 +367,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.privacy_tip_outlined,color:Colors.red,size: 25,),
+              Text("Safety Tips",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -407,17 +388,13 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.chat,color: Colors.cyan,size: 25,),
+              Text("Chat With Us",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
