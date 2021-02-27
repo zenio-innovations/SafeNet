@@ -4,7 +4,7 @@ import 'package:suraksha/pages/profile.dart';
 import 'pages/home.dart';
 var routes = <String, WidgetBuilder>{
    "/home": (BuildContext context) => Home(),
-   "/profile":(BuildContext context) => Profile(),
+   "/profile":(BuildContext context) => ProfilePage(),
 };
 
 void main() => runApp(new MaterialApp(
