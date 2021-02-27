@@ -1,5 +1,3 @@
-import 'dart:js';
-
 import 'package:flutter/material.dart';
 class Home extends StatefulWidget {
   @override
@@ -46,7 +44,7 @@ class _FirstHalfState extends State<FirstHalf> {
           Container(
         padding: EdgeInsets.all(15),
         height: 200,
-        width: 400,
+        width: 460,
         
         decoration: BoxDecoration(
           color: Colors.white,
@@ -418,7 +416,7 @@ Widget card(){
      child: Container(
           padding: EdgeInsets.all(15),
           height: 200,
-          width: 400,
+          width: 460,
           
           decoration: BoxDecoration(
             color: Colors.white,
@@ -430,13 +428,14 @@ Widget card(){
           children: [
             Column(
               children: [
-                Text("Get Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
-                Text("Safetly",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                Text("Get",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
+                Text("Home",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
+                Text("Safetly",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
               ],
             ),
             Container(
               
-              child: Image(image: AssetImage('assets/location.jpg'),fit: BoxFit.contain,),
+              child: Image(image: AssetImage('assets/location.jpg'),fit: BoxFit.fitWidth,),
             )
           ]
         ),
