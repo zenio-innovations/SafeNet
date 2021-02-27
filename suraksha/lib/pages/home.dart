@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suraksha/pages/alert.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -10,7 +11,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(child: Container(
         color: Colors.blue[50],
-        padding: EdgeInsets.fromLTRB(35,25,25,0),
+        padding: EdgeInsets.fromLTRB(25,25,25,0),
         // decoration: BoxDecoration(
         //   image: DecorationImage(
         //     image: AssetImage("assets/backimg.jpg"),
@@ -63,7 +64,7 @@ class _FirstHalfState extends State<FirstHalf> {
     height: 50.0,
     child: GestureDetector(
         onTap: () {
-          showAlertDialog(context);
+           Navigator.push(context, MaterialPageRoute(builder: (context) => AlertPage()));
         },
         child: Container(
             width: 200,
@@ -444,42 +445,3 @@ Widget card(){
    );
 }
 
-showAlertDialog(BuildContext context) {  
-  // Create button  
-  Widget yesButton = FlatButton(  
-    child: Text("Yes",style: TextStyle(color: Colors.cyanAccent[400])),  
-    onPressed: () {  
-      Navigator.of(context).pop();  
-    },  
-  );  
-  Widget noButton = FlatButton(  
-    child: Text("No",style: TextStyle(color: Colors.cyanAccent[400])),  
-    onPressed: () {  
-      Navigator.of(context).pop();  
-    },  
-  );  
-  
-  // Create AlertDialog  
-  AlertDialog alert = AlertDialog(  
-    title: Text("Someone Nearby in Danger!",style: TextStyle(color: Colors.cyanAccent[400]),),  
-    content: Text("Will you Help?",style: TextStyle(color: Colors.cyanAccent[400])),  
-    actions: [  
-      noButton,
-      yesButton,  
-    ],  
-    elevation: 24.0,
-    shape:  RoundedRectangleBorder(
-    borderRadius: BorderRadius.all(Radius.circular(20.0))
-),
-    backgroundColor: Colors.black87,
-    //shape: CircleBorder(),
-  );  
-  
-  // show the dialog  
-  showDialog(  
-    context: context,  
-    builder: (BuildContext context) {  
-      return alert;  
-    },  
-  );  
-} 
