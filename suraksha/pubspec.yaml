@@ -25,6 +25,9 @@ dependencies:
     sdk: flutter
   curved_navigation_bar: ^0.3.4
   #geolocator: '^2.1.0'
+  #geolocator: 6.2.1              # AndroidX - Breaking! 
+  #google_api_availability: 1.0.6  # Geolocator Dependency.                     # Geolocator Dependency. 
+  #permission_handler: 2.2.0       # Geolocator & Meta Dependency.
   google_maps_flutter:
 
   # The following adds the Cupertino Icons font to your application.
