@@ -33,6 +33,7 @@ Let's help each other and be safe.
 ```
 git clone https://github.com/<your_github_username>/Hackverse-2021.git
 ```
+
 3)cd into the surakshsa folder
 4)Make sure you have an Android Phone connected in debugging mode or have an Android emulator installed.
 5)In the terminal type :
