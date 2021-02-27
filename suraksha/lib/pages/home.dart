@@ -1,3 +1,5 @@
+import 'dart:js';
+
 import 'package:flutter/material.dart';
 class Home extends StatefulWidget {
   @override
@@ -32,6 +34,7 @@ class FirstHalf extends StatefulWidget {
 }
 
 class _FirstHalfState extends State<FirstHalf> {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +43,60 @@ class _FirstHalfState extends State<FirstHalf> {
         children: [
           title(),
           SizedBox(height: 20),
-          help(),
+          Container(
+        padding: EdgeInsets.all(15),
+        height: 200,
+        width: 400,
+        
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [BoxShadow(color:Colors.grey,
+          blurRadius: 5.0,),],
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage('assets/announce.jpg'),
+            ),
+            SizedBox(height:20),
+            Container(
+    height: 50.0,
+    child: GestureDetector(
+        onTap: () {
+          showAlertDialog(context);
+        },
+        child: Container(
+            width: 200,
+            decoration: BoxDecoration(
+                color: Colors.black87,
+                borderRadius: BorderRadius.circular(30.0),
+            ),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                    Center(
+                        child: Text(
+                           "NEED HELP!",
+                            style: TextStyle(
+                                color: Colors.cyanAccent[400],
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                            ),
+                        ),
+                    )
+                ],
+            ),
+        ),
+    ),
+)
+
+          ]
+        ),
+    
+  ),
+
           SizedBox(height: 20),
          contact(),
          SizedBox(height: 20),
@@ -90,59 +146,7 @@ Widget title(){
    );
 }
 
-Widget help(){
-  return Container(
-        padding: EdgeInsets.all(15),
-        height: 200,
-        width: 400,
-        
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [BoxShadow(color:Colors.grey,
-          blurRadius: 5.0,),],
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/announce.jpg'),
-            ),
-            SizedBox(height:20),
-            Container(
-    height: 50.0,
-    child: GestureDetector(
-        onTap: () {},
-        child: Container(
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(30.0),
-            ),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                    Center(
-                        child: Text(
-                           "NEED HELP!",
-                            style: TextStyle(
-                                color: Colors.cyanAccent[400],
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                            ),
-                        ),
-                    )
-                ],
-            ),
-        ),
-    ),
-)
-
-          ]
-        ),
-    
-  );
-}
+ 
 
 Widget contact(){
   return Container(
@@ -440,3 +444,43 @@ Widget card(){
   ),
    );
 }
+
+showAlertDialog(BuildContext context) {  
+  // Create button  
+  Widget yesButton = FlatButton(  
+    child: Text("Yes",style: TextStyle(color: Colors.cyanAccent[400])),  
+    onPressed: () {  
+      Navigator.of(context).pop();  
+    },  
+  );  
+  Widget noButton = FlatButton(  
+    child: Text("No",style: TextStyle(color: Colors.cyanAccent[400])),  
+    onPressed: () {  
+      Navigator.of(context).pop();  
+    },  
+  );  
+  
+  // Create AlertDialog  
+  AlertDialog alert = AlertDialog(  
+    title: Text("Someone Nearby in Danger!",style: TextStyle(color: Colors.cyanAccent[400]),),  
+    content: Text("Will you Help?",style: TextStyle(color: Colors.cyanAccent[400])),  
+    actions: [  
+      noButton,
+      yesButton,  
+    ],  
+    elevation: 24.0,
+    shape:  RoundedRectangleBorder(
+    borderRadius: BorderRadius.all(Radius.circular(20.0))
+),
+    backgroundColor: Colors.black87,
+    //shape: CircleBorder(),
+  );  
+  
+  // show the dialog  
+  showDialog(  
+    context: context,  
+    builder: (BuildContext context) {  
+      return alert;  
+    },  
+  );  
+} 
