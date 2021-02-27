@@ -66,7 +66,7 @@ Widget title(){
                   children: <Widget>[
                     Text("Kochi,Kerala",
                     style:TextStyle(
-                      fontWeight: FontWeight.w100,
+                      fontWeight: FontWeight.w300,
                       fontSize: 15,
                     )
                     ),
@@ -166,7 +166,7 @@ Widget contact(){
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text('Active Emergency',style: TextStyle(color: Colors.white,fontWeight: FontWeight.bold,fontSize: 25)),
-              SizedBox(height:10),
+              SizedBox(height:2),
               Text('Call 101 for emergencies',style: TextStyle(color: Colors.grey[350],fontWeight: FontWeight.w100,fontSize: 15)),
               SizedBox(height:10),
               Container(
@@ -444,6 +444,12 @@ Widget card(){
           ),
         child: Row(
           children: [
+            Column(
+              children: [
+                Text("Get Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                Text("Safetly",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+              ],
+            ),
             Container(
               
               child: Image(image: AssetImage('assets/location.jpg'),fit: BoxFit.contain,),
