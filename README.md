@@ -36,9 +36,9 @@ git clone https://github.com/<your_github_username>/Hackverse-2021.git
 3)cd into the surakshsa folder
 4)Make sure you have an Android Phone connected in debugging mode or have an Android emulator installed.
 5)In the terminal type :
-```
-flutter run
-```
+  ```
+  flutter run
+  ```
 6) You will be able to see the app on the device.
 
 ## Declaration of Previous Work:
