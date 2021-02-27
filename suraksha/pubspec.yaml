@@ -29,7 +29,7 @@ dependencies:
   #google_api_availability: 1.0.6  # Geolocator Dependency.                     # Geolocator Dependency. 
   #permission_handler: 2.2.0       # Geolocator & Meta Dependency.
   google_maps_flutter:
-
+  sliding_up_panel: ^1.0.0
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
   cupertino_icons: ^1.0.1
@@ -55,6 +55,7 @@ flutter:
   assets:
     - assets/location.jpg
     - assets/announce.jpg
+    - assets/zayn.jpg
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.

@@ -14,7 +14,7 @@ class _NavigState extends State<Navig> {
   int _currentIndex = 0;
   final List<Widget> _page = [
     Home(),
-    Profile(),
+    ProfilePage(),
   ];
   @override
   Widget build(BuildContext context) {
