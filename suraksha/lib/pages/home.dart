@@ -258,6 +258,8 @@ Widget contact(){
           ),
       
     ),
+    SizedBox(width: 20),
+    
       ]
     )
     ),
@@ -266,6 +268,7 @@ Widget contact(){
 
 Widget explore(){
   return Container(
+    padding: EdgeInsets.only(right:20),
     child:SingleChildScrollView(
       scrollDirection: Axis.horizontal,
           child: Row(
