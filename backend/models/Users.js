@@ -37,10 +37,17 @@ const UserSchema = new schema({
 	},
 	emergencycontacts: [
 		{
-			type: String,
-			required: true,
+			username: { type: String, required: true },
 		},
 	],
+	lat: {
+		type: Number,
+		required: true,
+	},
+	long: {
+		type: Number,
+		required: true,
+	},
 });
 const exp = mongoose.model('User', UserSchema);
 export default exp;
