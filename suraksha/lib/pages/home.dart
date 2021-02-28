@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:suraksha/pages/alert.dart';
 class Home extends StatefulWidget {
   @override
   _HomeState createState() => _HomeState();
@@ -10,7 +11,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       body: SafeArea(child: Container(
         color: Colors.blue[50],
-        padding: EdgeInsets.fromLTRB(35,25,25,0),
+        padding: EdgeInsets.fromLTRB(25,25,25,0),
         // decoration: BoxDecoration(
         //   image: DecorationImage(
         //     image: AssetImage("assets/backimg.jpg"),
@@ -32,6 +33,7 @@ class FirstHalf extends StatefulWidget {
 }
 
 class _FirstHalfState extends State<FirstHalf> {
+  
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -40,7 +42,60 @@ class _FirstHalfState extends State<FirstHalf> {
         children: [
           title(),
           SizedBox(height: 20),
-          help(),
+          Container(
+        padding: EdgeInsets.all(15),
+        height: 200,
+        width: 460,
+        
+        decoration: BoxDecoration(
+          color: Colors.white,
+          boxShadow: [BoxShadow(color:Colors.grey,
+          blurRadius: 5.0,),],
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: Column(
+          children: [
+            CircleAvatar(
+              radius: 50,
+              backgroundImage: AssetImage('assets/announce.jpg'),
+            ),
+            SizedBox(height:20),
+            Container(
+    height: 50.0,
+    child: GestureDetector(
+        onTap: () {
+           Navigator.push(context, MaterialPageRoute(builder: (context) => AlertPage()));
+        },
+        child: Container(
+            width: 200,
+            decoration: BoxDecoration(
+                color: Colors.black87,
+                borderRadius: BorderRadius.circular(30.0),
+            ),
+            child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: <Widget>[
+                    Center(
+                        child: Text(
+                           "NEED HELP!",
+                            style: TextStyle(
+                                color: Colors.cyanAccent[400],
+                                fontSize: 16,
+                                fontWeight: FontWeight.w600,
+                            ),
+                        ),
+                    )
+                ],
+            ),
+        ),
+    ),
+)
+
+          ]
+        ),
+    
+  ),
+
           SizedBox(height: 20),
          contact(),
          SizedBox(height: 20),
@@ -90,59 +145,7 @@ Widget title(){
    );
 }
 
-Widget help(){
-  return Container(
-        padding: EdgeInsets.all(15),
-        height: 200,
-        width: 400,
-        
-        decoration: BoxDecoration(
-          color: Colors.white,
-          boxShadow: [BoxShadow(color:Colors.grey,
-          blurRadius: 5.0,),],
-          borderRadius: BorderRadius.circular(20),
-        ),
-        child: Column(
-          children: [
-            CircleAvatar(
-              radius: 50,
-              backgroundImage: AssetImage('assets/announce.jpg'),
-            ),
-            SizedBox(height:20),
-            Container(
-    height: 50.0,
-    child: GestureDetector(
-        onTap: () {},
-        child: Container(
-            width: 200,
-            decoration: BoxDecoration(
-                color: Colors.black87,
-                borderRadius: BorderRadius.circular(30.0),
-            ),
-            child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: <Widget>[
-                    Center(
-                        child: Text(
-                           "NEED HELP!",
-                            style: TextStyle(
-                                color: Colors.cyanAccent[400],
-                                fontSize: 16,
-                                fontWeight: FontWeight.w600,
-                            ),
-                        ),
-                    )
-                ],
-            ),
-        ),
-    ),
-)
-
-          ]
-        ),
-    
-  );
-}
+ 
 
 Widget contact(){
   return Container(
@@ -258,6 +261,8 @@ Widget contact(){
           ),
       
     ),
+    SizedBox(width: 20),
+    
       ]
     )
     ),
@@ -266,6 +271,7 @@ Widget contact(){
 
 Widget explore(){
   return Container(
+    padding: EdgeInsets.only(right:20),
     child:SingleChildScrollView(
       scrollDirection: Axis.horizontal,
           child: Row(
@@ -273,7 +279,7 @@ Widget explore(){
         children: [
           Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -282,23 +288,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.map_outlined,color: Colors.yellow,size: 25,),
+              Text("Bus Routes",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -307,23 +309,20 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.time_to_leave,color: Colors.red,size: 25,),
+              SizedBox(height:10),
+              Text("Ambulance",style: TextStyle(fontSize: 9,fontWeight: FontWeight.w900),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -332,23 +331,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.medical_services,color: Colors.cyan,size: 25,),
+              Text("Medical info",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -357,23 +352,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.directions_walk,color: Colors.yellow,size: 25,),
+              Text("Safe Routes",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -382,23 +373,19 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.privacy_tip_outlined,color:Colors.red,size: 25,),
+              Text("Safety Tips",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
     Container(
           padding: EdgeInsets.all(15),
-          height: 80,
+          height: 81,
           width: 80,
           
           decoration: BoxDecoration(
@@ -407,17 +394,13 @@ Widget explore(){
             blurRadius: 1.0,),],
             borderRadius: BorderRadius.circular(20),
           ),
-          // child: Column(
-          //   crossAxisAlignment: CrossAxisAlignment.center,
-          //   children: [
-          //     Text('Contacts',style: TextStyle(color: Colors.cyanAccent[400],fontWeight: FontWeight.bold,fontSize: 25)),
-          //     SizedBox(height:10),
-          //     Text('Call your Close Ones',style: TextStyle(color: Colors.grey,fontWeight: FontWeight.w300,fontSize: 15)),
-          //     SizedBox(height:30),
-              
-
-          //   ]
-          // ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Icon(Icons.chat,color: Colors.cyan,size: 25,),
+              Text("Chat With Us",style: TextStyle(fontSize: 10,fontWeight: FontWeight.bold),textAlign: TextAlign.center,)
+            ]
+          ),
       
     ),
     SizedBox(width:20),
@@ -434,7 +417,7 @@ Widget card(){
      child: Container(
           padding: EdgeInsets.all(15),
           height: 200,
-          width: 400,
+          width: 460,
           
           decoration: BoxDecoration(
             color: Colors.white,
@@ -446,13 +429,14 @@ Widget card(){
           children: [
             Column(
               children: [
-                Text("Get Home",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
-                Text("Safetly",style: TextStyle(fontSize: 25,fontWeight: FontWeight.w700),),
+                Text("Get",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
+                Text("Home",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
+                Text("Safetly",style: TextStyle(fontSize: 15,fontWeight: FontWeight.w700),),
               ],
             ),
             Container(
               
-              child: Image(image: AssetImage('assets/location.jpg'),fit: BoxFit.contain,),
+              child: Image(image: AssetImage('assets/location.jpg'),fit: BoxFit.fitWidth,),
             )
           ]
         ),
@@ -460,3 +444,4 @@ Widget card(){
   ),
    );
 }
+
