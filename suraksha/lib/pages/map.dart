@@ -1,7 +1,35 @@
+import 'package:android_intent/android_intent.dart';
+import 'package:android_intent/flag.dart';
+import 'package:map_launcher/map_launcher.dart';
 import 'package:flutter/material.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
-//import 'package:geolocator/geolocator.dart';
+import 'package:platform/platform.dart';
 
+//import 'package:geolocator/geolocator.dart';
+Future<void> launchMap() async {
+  final availableMaps = await MapLauncher.installedMaps;
+print(availableMaps); // [AvailableMap { mapName: Google Maps, mapType: google }, ...]
+
+await availableMaps.first.showDirections(
+  destination: Coords(9.9542, 76.3024),
+  destinationTitle: "Ocean Beach",
+);
+}
+// void launchMap() {
+//   String origin = "Kadavanthara"; // lat,long like 123.34,68.56
+//   String destination = "Panampilly Nagar";
+//   if (new LocalPlatform().isAndroid) {
+//     final AndroidIntent intent = new AndroidIntent(
+//         action: 'action_view',
+//         data: Uri.encodeFull("https://www.google.com/maps/dir/?api=1&origin=" +
+//             origin +
+//             "&destination=" +
+//             destination +
+//             "&travelmode=driving&dir_action=navigate"),
+//         package: 'com.google.android.apps.maps');
+//     intent.launch();
+//   }
+// }
 
 class Gmap extends StatefulWidget {
   @override
@@ -25,9 +53,9 @@ class _GmapState extends State<Gmap> {
         //           target: LatLng(40.7128, -74.0060), zoom: 10.0)),
         // ),
         GoogleMap(
-          onMapCreated: onMapCreated,
-          initialCameraPosition: CameraPosition(target: LatLng(40.7128, -74.0060), zoom: 10.0)
-        ),
+            onMapCreated: onMapCreated,
+            initialCameraPosition:
+                CameraPosition(target: LatLng(40.7128, -74.0060), zoom: 10.0)),
         Positioned(
           top: 30.0,
           right: 15.0,
@@ -44,7 +72,9 @@ class _GmapState extends State<Gmap> {
                   contentPadding: EdgeInsets.only(left: 15.0, top: 15.0),
                   suffixIcon: IconButton(
                       icon: Icon(Icons.search),
-                      onPressed: (){},
+                      onPressed: () {
+                        launchMap();
+                      },
                       iconSize: 30.0)),
               onChanged: (val) {
                 setState(() {
